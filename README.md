@@ -25,7 +25,7 @@ We were given pickup and drop-off locations, the pickup timestamp, and the passe
           1.	Euclidean Distance: Euclidean Distance represents the shortest distance between two points.
           
           
-              ![euc](https://user-images.githubusercontent.com/89060175/135291762-76ebd3da-5e82-4277-87ea-6c749c4f7130.png)
+              https://github.com/UDIVs/Taxi_Fare_Prediction/issues/1#issue-1011055671
 
 
               
