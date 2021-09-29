@@ -54,15 +54,39 @@ We were given pickup and drop-off locations, the pickup timestamp, and the passe
 
             From Date_time_of_pickup we extracted min, hour, day, weekday, time of day, month and year.
 
-   (4)	Dropping of useless variables
+#### Dropping of useless variables
 
+### Dummy Creation: 
+    
+    Machine Learning Algorithms cannot work on Object type datatypes so for that reason we have created dummies for categorical variables. We created dummy of time of day and
+    day. Also we created other variables such as Is_weekend, Is_starting_of_month etc for better analysis.
 
-3	Dummy Creation: Machine Learning Algorithms cannot work on Object type datatypes so for that reason we have created dummies for categorical variables. We created dummy of time of day and day. Also we created other variables such as Is_weekend, Is_starting_of_month etc for better analysis.
+### Graphical Analysis
+![Distribution of Fare](https://user-images.githubusercontent.com/89060175/135296080-8f827918-6504-442f-875e-f830ffbe41d6.jpg)
 
-4	Graphical Analysis
+![Fare $USD_mile](https://user-images.githubusercontent.com/89060175/135296198-d320910c-c540-436e-b8ae-bf15f596a847.jpg)
 
+![Average_Fare_vs_Time_of_Day](https://user-images.githubusercontent.com/89060175/135296276-5fddda38-a2db-4a09-a2b4-76ae60fa2725.jpg)
 
-5	Splitting the data into train and test: Split the data into train and test datasets and feed it into our model. Here we have split the data into 80% train and 20% test.
-6	Applying the model: Applied RandomForest Regression.
-7	Predicting y: Predict the y_train using x_train through the model and same goes for y_test.
-8	Calculating MSE, RMSE and MAE
+![Average_Fare_vs_Day](https://user-images.githubusercontent.com/89060175/135296391-3f4dbf57-0ffd-4dac-ba9e-b7b0ea702a33.jpg)
+
+![Time_of_Day_vs_Count_of_Passengers](https://user-images.githubusercontent.com/89060175/135296519-82b252a3-9930-41e8-98e8-ec1e9e422345.jpg)
+
+![Time_of_Day_vs_Average_Fare](https://user-images.githubusercontent.com/89060175/135296680-eb997a55-7f48-4f58-97fa-455b979a4802.jpg)
+
+![Day Vs Average Distance](https://user-images.githubusercontent.com/89060175/135296748-5cf271b8-4bac-482b-aeb4-2b76aa9db228.jpg)
+
+![Year vs Count of Passengers](https://user-images.githubusercontent.com/89060175/135296810-17d0eb32-55d4-4ee4-adf2-4091f3729dd5.jpg)
+
+![Year vs No of Passengers](https://user-images.githubusercontent.com/89060175/135296858-2cad3075-171c-46f0-bf72-f9d07aecb3a6.jpg)
+
+### Splitting the data into train and test: 
+    Split the data into train and test datasets and feed it into our model. Here we have split the data into 80% train and 20% test.
+
+### Applying the model: 
+    Applied RandomForest Regression.
+
+### Predicting y: 
+    Predict the y_train using x_train through the model and same goes for y_test.
+
+### Calculating MSE, RMSE and MAE
