@@ -90,3 +90,8 @@ We were given pickup and drop-off locations, the pickup timestamp, and the passe
     Predict the y_train using x_train through the model and same goes for y_test.
 
 ### Calculating MSE, RMSE and MAE
+    Mean Absolute Error = mean(abs(Actual Value - Predicted Value))
+    
+    Mean Square Error = mean(square(Actual Value -Predicted Value))
+    
+    Root Mean Square Error = square_root(mean(square(Actual Value -Predicted Value)))
