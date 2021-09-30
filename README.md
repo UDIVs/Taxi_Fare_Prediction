@@ -8,7 +8,7 @@ We were given pickup and drop-off locations, the pickup timestamp, and the passe
 ### Data Preparation: 
   
 #### Missing Value Treatment:
-     There was no null value present in data set.
+   - There was no null value present in data set.
   
 #### Outlier Treatment: 
        
