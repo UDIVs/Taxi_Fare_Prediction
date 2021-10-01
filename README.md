@@ -83,7 +83,8 @@ Where, n = number of dimensions
 
 pi, qi = data point
 
-      2. Manhattan Distance: Manhattan Distance is the sum of absolute differences between points across all the dimensions.
+      2. Manhattan Distance: Manhattan Distance is the sum of absolute differences between points 
+         across all the dimensions.
       
 ![image](https://user-images.githubusercontent.com/89060175/135588266-9741bfd1-c5c0-4de8-9f1c-a027ca0c751c.png)
 
@@ -99,7 +100,8 @@ pi, qi = data point
 
 
 
-    - We derived both Euclidean and Manhattan Distance formula to calculate the distance between pickup and drop-off locations.
+    - We derived both Euclidean and Manhattan Distance formula to calculate 
+      the distance between pickup and drop-off locations.
 
     - From variable Date\_time\_of\_pickup we extracted minutes, hour, day, weekday, time of day, month and 
       year for classifying/stratifying the utilization effect in different time and days.
