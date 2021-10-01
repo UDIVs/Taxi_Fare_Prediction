@@ -27,7 +27,7 @@ _ **Data Integration and massaging** __ **:** _This step involves data reading, 
 
 1. Loading Dataset: The dataset consists of 50,000 rows and 7 Columns.
      
-        
+*Table-1: List of variable with description available in Raw Dataset*
 | Column                | Description                                                  |
 |-----------------------|--------------------------------------------------------------|
 | unique_id             | A unique identifier or key for each record in the dataset    |
@@ -52,9 +52,18 @@ _ **Data Integration and massaging** __ **:** _This step involves data reading, 
      - No. of Passenger: As in case of passengers it can&#39;t be more than 4 people excluding the driver in one ride.
      - All the other capping were done according to the 99th percentile of the dataset.
      
+*Table-2: Statistical Information of Raw Dataset*
+| Columns              | Statistics |       |      |       |         |         |         |       |
+|----------------------|------------|-------|------|-------|---------|---------|---------|-------|
+|                      | count      | mean  | std  | min   | Q1(25%) | Q2(50%) | Q3(75%) | max   |
+| amount               | 50000      | 11.4  | 9.7  | -5.0  | 6.0     | 8.5     | 12.5    | 200.0 |
+| longitude_of_pickup  | 50000      | -72.5 | 10.4 | -75.4 | -74.0   | -74.0   | -74.0   | 40.8  |
+| latitude_of_pickup   | 50000      | 39.9  | 6.2  | -74.0 | 40.7    | 40.8    | 40.8    | 401.1 |
+| longitude_of_dropoff | 50000      | -72.5 | 10.4 | -84.7 | -74.0   | -74.0   | -74.0   | 40.9  |
+| latitude_of_dropoff  | 50000      | 39.9  | 6.0  | -74.0 | 40.7    | 40.8    | 40.8    | 43.4  |
+| no_of_passenger      | 50000      | 1.7   | 1.3  | 0.0   | 1.0     | 1.0     | 2.0     | 6.0   |
 
 
-![image](https://user-images.githubusercontent.com/89060175/135585645-d010f7d8-ac22-44db-ae93-802c5c579575.png)
 
 
 1. Feature Engineering:
