@@ -26,9 +26,21 @@ The quality of results depends on the data quality and features used for modelli
 _ **Data Integration and massaging** __ **:** _This step involves data reading, data preparing by attempting missing value/outlier treatment, creation of derived variable, dropping unwanted columns, converting the categorical variables to machine-understandable format, and finally splitting of training data into train and validation sets.
 
 1. Loading Dataset: The dataset consists of 50,000 rows and 7 Columns.
+     
+        
+| Column                | Description                                                  |
+|-----------------------|--------------------------------------------------------------|
+| unique_id             | A unique identifier or key for each record in the dataset    |
+| date_time_of_pickup   | The time when the ride started                               |
+| longitude_of_pickup   | Longitude of the taxi ride pickup point                      |
+| latitude_of_pickup    | Latitude of the taxi ride pickup point                       |
+| longitude__of_dropoff | Longitude of the taxi ride dropoff point                     |
+| latitude_of_dropoff   | Latitude of the taxi ride dropoff                            |
+| point no_of_passenger | count of the passengers during the ride                      |
+| amount                | (target variable) dollar amount of the cost of the taxi ride |
 
 
-![image](https://user-images.githubusercontent.com/89060175/135584400-1cb4960e-86e4-42ef-958f-d3785d362470.png)
+
 
 1. Data Preparation:
 
@@ -37,26 +49,13 @@ _ **Data Integration and massaging** __ **:** _This step involves data reading, 
 
     - Amount: We capped the minimum value at 2.5 because the amount/fare can&#39;t be negative. The least it can be is 2.5. The maximum value we capped according to the 99th percentile.
 
-          - No. of Passenger: As in case of passengers it can&#39;t be more than 4 people excluding the driver in one ride.
-          - All the other capping were done according to the 99th percentile of the dataset.
+     - No. of Passenger: As in case of passengers it can&#39;t be more than 4 people excluding the driver in one ride.
+     - All the other capping were done according to the 99th percentile of the dataset.
+     
 
-| **Table-2: Statistical Information of Raw Dataset** |
-| --- |
-| **Columns** | **Statistics** |
-| --- | --- |
-|   | count | mean | std | min | Q1(25%) | Q2(50%) | Q3(75%) | max | Coeff Of variation |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| amount | 50000 | 11.4 | 9.7 | -5.0 | 6.0 | 8.5 | 12.5 | 200.0 | 1.2 |
-| longitude\_of\_pickup | 50000 | -72.5 | 10.4 | -75.4 | -74.0 | -74.0 | -74.0 | 40.8 | -7.0 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| latitude\_of\_pickup | 50000 | 39.9 | 6.2 | -74.0 | 40.7 | 40.8 | 40.8 | 401.1 | 6.4 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| longitude\_of\_dropoff | 50000 | -72.5 | 10.4 | -84.7 | -74.0 | -74.0 | -74.0 | 40.9 | -7.0 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| latitude\_of\_dropoff | 50000 | 39.9 | 6.0 | -74.0 | 40.7 | 40.8 | 40.8 | 43.4 | 6.6 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| no\_of\_passenger | 50000 | 1.7 | 1.3 | 0.0 | 1.0 | 1.0 | 2.0 | 6.0 | 1.3 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+![image](https://user-images.githubusercontent.com/89060175/135585645-d010f7d8-ac22-44db-ae93-802c5c579575.png)
+
 
 1. Feature Engineering:
 
