@@ -72,19 +72,20 @@ _ **Data Integration and massaging** __ **:** _This step involves data reading, 
 
       1. Euclidean Distance: Euclidean Distance represents the shortest distance between two points.
 
-![](RackMultipart20211001-4-11n4h4n_html_a009753769a9cfa8.png)
+![image](https://user-images.githubusercontent.com/89060175/135588152-bf96c10b-438c-48c7-ae30-4434cf9d6cc3.png)
 
-![](RackMultipart20211001-4-11n4h4n_html_b674edaf216bad6c.png)
+![image](https://user-images.githubusercontent.com/89060175/135588185-a78a8e42-b141-44c0-8555-01f46d58dd47.png)
+
 
 Where, n = number of dimensions
 
 pi, qi = data point
 
       1. Manhattan Distance: Manhattan Distance is the sum of absolute differences between points across all the dimensions.
+      
+![image](https://user-images.githubusercontent.com/89060175/135588266-9741bfd1-c5c0-4de8-9f1c-a027ca0c751c.png)
 
-![](RackMultipart20211001-4-11n4h4n_html_7905f45fc95db66a.png)
-
-![](RackMultipart20211001-4-11n4h4n_html_841afc804ae59626.png)
+![image](https://user-images.githubusercontent.com/89060175/135588307-1a3d4f18-4d67-4f14-8c48-4a07dbe0490c.png)
 
 Where, n = number of dimensions.
 
@@ -92,11 +93,14 @@ pi, qi = data point
 
       1. Minkowski Distance: It is the generalized form of Euclidean and Manhattan Distance.
 
-![](RackMultipart20211001-4-11n4h4n_html_b1fe1482f9b83b5c.png)
+![image](https://user-images.githubusercontent.com/89060175/135588447-1f9d9e69-70e7-478f-9bf5-bd8a2330b660.png)
+
+
 
     - We derived both Euclidean and Manhattan Distance formula to calculate the distance between pickup and drop-off locations.
 
-    - From variable Date\_time\_of\_pickup we extracted minutes, hour, day, weekday, time of day, month and year for classifying/stratifying the utilization effect in different time and days.
+    - From variable Date\_time\_of\_pickup we extracted minutes, hour, day, weekday, time of day, month and 
+      year for classifying/stratifying the utilization effect in different time and days.
 
 1.
 
