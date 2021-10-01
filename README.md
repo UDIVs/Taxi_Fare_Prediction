@@ -1,10 +1,10 @@
-**Taxi Dataset**
+# Taxi Fare Prediction Using Random Forest # 
 
-**Problem Statement:**
+## Problem Statement:
 
 To predict the fare of the taxi ride using Random Forest given pickup and drop-off locations, the pickup timestamp, and the passenger count.
 
-Abstract:
+### Purpose:
 
 In last few years, it has been observed that number of operating hire vehicles and number of trips in app-based vehicle increased drastically. However, taxi trips have fallen in same proportion in which number of vehicles increased.
 
@@ -13,7 +13,7 @@ The purpose of doing this exercise is two-fold:
 1. To facilitate the cab organisation data centric outcome so that they can provide the optimize overall taxi fare by incorporating the flexibility in some of the fixed cost like waiting time in pickup, drop off and traffic jam along with peak hours.
 2. To increase the Net promoting Score (NPS) by winning the confidence of customers in competitive market which resulted in improving taxi trips.
 
-**Roadmap:**
+### Roadmap:
 
 The quality of results depends on the data quality and features used for modelling. Given below are the steps, I followed while building the model
 
@@ -23,7 +23,9 @@ The quality of results depends on the data quality and features used for modelli
 4. Testing and validation of Model
 5. Result and Interpretation
 
-_ **Data Integration and massaging** __ **:** _This step involves data reading, data preparing by attempting missing value/outlier treatment, creation of derived variable, dropping unwanted columns, converting the categorical variables to machine-understandable format, and finally splitting of training data into train and validation sets.
+### Data Integration and massaging:
+
+This step involves data reading, data preparing by attempting missing value/outlier treatment, creation of derived variable, dropping unwanted columns, converting the categorical variables to machine-understandable format, and finally splitting of training data into train and validation sets.
 
 1. Loading Dataset: The dataset consists of 50,000 rows and 7 Columns.
      
@@ -42,10 +44,10 @@ _ **Data Integration and massaging** __ **:** _This step involves data reading, 
 
 
 
-1. Data Preparation:
+2. Data Preparation:
 
-1. Missing Value Treatment: There was no null value present in data set.
-2. Outlier Treatment:
+-  Missing Value Treatment: There was no null value present in data set.
+-  Outlier Treatment:
 
     - Amount: We capped the minimum value at 2.5 because the amount/fare can&#39;t be negative. The least it can be is 2.5. The maximum value we capped according to the 99th percentile.
 
@@ -66,7 +68,7 @@ _ **Data Integration and massaging** __ **:** _This step involves data reading, 
 
 
 
-1. Feature Engineering:
+- Feature Engineering:
 
           - Travel Distance Calculation: There are three methods to calculate the distance.
 
@@ -81,7 +83,7 @@ Where, n = number of dimensions
 
 pi, qi = data point
 
-      1. Manhattan Distance: Manhattan Distance is the sum of absolute differences between points across all the dimensions.
+      2. Manhattan Distance: Manhattan Distance is the sum of absolute differences between points across all the dimensions.
       
 ![image](https://user-images.githubusercontent.com/89060175/135588266-9741bfd1-c5c0-4de8-9f1c-a027ca0c751c.png)
 
@@ -91,7 +93,7 @@ Where, n = number of dimensions.
 
 pi, qi = data point
 
-      1. Minkowski Distance: It is the generalized form of Euclidean and Manhattan Distance.
+      3. Minkowski Distance: It is the generalized form of Euclidean and Manhattan Distance.
 
 ![image](https://user-images.githubusercontent.com/89060175/135588447-1f9d9e69-70e7-478f-9bf5-bd8a2330b660.png)
 
@@ -101,6 +103,8 @@ pi, qi = data point
 
     - From variable Date\_time\_of\_pickup we extracted minutes, hour, day, weekday, time of day, month and 
       year for classifying/stratifying the utilization effect in different time and days.
+
+- Discarding Redundant Variables: Given below variables have been dropped which are not relevant or have been used in deriving new variables before model building.
 
 *Table-3: List of Discarded Variables*
 | Column                | Description                                               |
@@ -116,11 +120,11 @@ pi, qi = data point
 | latitude_of_dropoff   | Latitude of the taxi ride dropoff                         |
 
 
-Discarding Redundant Variables: Given below variables have been dropped which are not relevant or have been used in deriving new variables before model building.
 
-1. Dummy Variable Creation: Machine Learning Algorithms cannot work on object type datatypes so for that reason we have created dummies for categorical variables. We created dummy of time of day and day. Also, we created other variables such as Is\_weekend, Is\_starting\_of\_month etc for better analysis.
 
-1. Splitting the data into train and test: Split the data into train and test datasets and feed it into our model. Here we have split the data into 80% train and 20% test. The training and testing dataset consist of 39155 rows and 9789 rows correspondingly with 23 Columns in both datasets. Below is the list of final variables in training and testing dataset.
+- Dummy Variable Creation: Machine Learning Algorithms cannot work on object type datatypes so for that reason we have created dummies for categorical variables. We created dummy of time of day and day. Also, we created other variables such as Is\_weekend, Is\_starting\_of\_month etc for better analysis.
+
+- Splitting the data into train and test: Split the data into train and test datasets and feed it into our model. Here we have split the data into 80% train and 20% test. The training and testing dataset consist of 39155 rows and 9789 rows correspondingly with 23 Columns in both datasets. Below is the list of final variables in training and testing dataset.
 
 | Table-4: Final list of variables used in Model |                     |                      |
 |------------------------------------------------|---------------------|----------------------|
@@ -165,9 +169,9 @@ Discarding Redundant Variables: Given below variables have been dropped which ar
 | max                | 0.228           | 1.448       | 4               | 52.0   |
 | Coeff Of variation | 0.898           | 0.810       | 1.563           | 1.260  |
 
-_ **Exploratory Analysis** _
+### Exploratory Analysis
 
-1. Graphical Analysis
+#### Graphical Analysis
 
 ![image](https://user-images.githubusercontent.com/89060175/135590706-cc891040-f7d4-4b1e-950c-927604f7c2e7.png)
 
@@ -212,7 +216,7 @@ It's merely a different version of the graph above. With respect to different da
 The number of passengers is falling at the end of 2014, as seen in the graph above, and the trend of each day for the given years is similar.
 
 
-_ **Model Building** __ **:** _
+### Model Building:
 
 Random Forest is far more flexible having lower bias, and it can fit the data better.
 
@@ -220,41 +224,33 @@ Random Forest is far more flexible having lower bias, and it can fit the data be
 2. Predicting y: Predict the y\_train using x\_train through the model and same goes for y\_test.
 3. Calculating MSE, RMSE and MAE
 
-_ **Testing and validation of Model** _
+### Testing and validation of Model
 
 The validation of model helps in understanding how the model fit using training data and works on any unseen data. This facilitate to gauge whether the model is overfitting or underfitting. Overfitting is the term used when training error is low, but the testing error is high. This is a common problem with complex models because they tend to memorize the underlying data and hence perform poorly on unseen data.
 
-_ **Result and Interpretation** _
+### Result and Interpretation
 
 R2 is a measure of how well a model predicts the target variables. The error is calculated using the RMSE and MAE methods. As can be seen, our model has good accuracy and a low bias/variance trade-off. We can conclude from this analysis that our model is performing well.
 
-| **Table-6: Statistics of Predicted variable (Taxi fare)** |
-| --- |
-| **Statistic** | **Training Dataset** | **Testing Dataset** |
-| --- | --- | --- |
-| **Amount** | **Amount** |
-| **count** | 39155 | 9789 |
-| --- | --- | --- |
-| **mean** | 11.26 | 11.21 |
-| --- | --- | --- |
-| **std** | 8.10 | 8.00 |
-| --- | --- | --- |
-| **min** | 5.31 | 5.31 |
-| --- | --- | --- |
-| **Q1** | 6.85 | 6.85 |
-| --- | --- | --- |
-| **Q2** | 8.78 | 8.85 |
-| --- | --- | --- |
-| **Q3** | 12.68 | 12.57 |
-| --- | --- | --- |
-| **max** | 50.88 | 50.88 |
-| --- | --- | --- |
-| **Coeff Of variation** | 1.39 | 1.40 |
-| --- | --- | --- |
 
-| **Table-7: Model Statistics of Training and Testing dataset** |
-| --- |
-| **Model Parameter** | **Training Dataset** | **Testing Dataset** |
-| R square(R2) | 0.8277 | 0.8211 |
-| MAE | 2.0792 | 2.1125 |
-| RMSE | 3.7211 | 3.7755 |
+*Table-7: Statistics of Predicted variable (Taxi fare)*
+| Statistic          | Training Dataset | Testing Dataset |
+|--------------------|------------------|-----------------|
+|                    | Amount           | Amount          |
+| count              | 39155            | 9789            |
+| mean               | 11.26            | 11.21           |
+| std                | 8.10             | 8.00            |
+| min                | 5.31             | 5.31            |
+| Q1                 | 6.85             | 6.85            |
+| Q2                 | 8.78             | 8.85            |
+| Q3                 | 12.68            | 12.57           |
+| max                | 50.88            | 50.88           |
+| Coeff Of variation | 1.39             | 1.40            |
+
+
+*Table-8: Model Statistics of Training and Testing dataset*
+| Model Parameter | Training Dataset | Testing Dataset |
+|-----------------|------------------|-----------------|
+| R square(R2)    | 0.8277           | 0.8211          |
+| MAE             | 2.0792           | 2.1125          |
+| RMSE            | 3.7211           | 3.7755          |
