@@ -153,7 +153,7 @@ pi, qi = data point
 | Q2                 | 0.02             | 0.03        | 1               | 8.5    |
 | Q3                 | 0.04             | 0.05        | 2               | 12.5   |
 | max                | 0.228            | 1.538       | 4               | 52.0   |
-| Coeff Of variation | 0.893            | 0.807       | 1.563           | 1.255  |
+| Coeff Of variation | 1.120            | 1.239       | 0.640           | 0.797  |
 
 
 
@@ -169,7 +169,7 @@ pi, qi = data point
 | Q2                 | 0.02            | 0.03        | 1               | 8.5    |
 | Q3                 | 0.04            | 0.05        | 2               | 12.5   |
 | max                | 0.228           | 1.448       | 4               | 52.0   |
-| Coeff Of variation | 0.898           | 0.810       | 1.563           | 1.260  |
+| Coeff Of variation | 1.114           | 1.234       | 0.640           | 0.794  |
 
 ### Exploratory Analysis
 
@@ -194,9 +194,9 @@ We had now divided the entire 24-hour period into four pieces. Namely:
 
 2. Afternoon: 12 p.m. to 17 p.m.
 
-3. Afternoon: 17 to 21
-
-4. Evening: 21 to 6 p.m.
+3. Afternoon: 17 p.m. to 21 p.m.
+ 
+4. Evening: 21 p.m. to 6 a.m.
 
 In comparison to the other times, the fare is significantly higher in the afternoon and at night. This increase could be related to the unusual hours, as most cab firms impose a night premium so that drivers don&#39;t cancel rides and lose out on the odd hour incentives.
 
@@ -247,7 +247,7 @@ R2 is a measure of how well a model predicts the target variables. The error is 
 | Q2                 | 8.78             | 8.85            |
 | Q3                 | 12.68            | 12.57           |
 | max                | 50.88            | 50.88           |
-| Coeff Of variation | 1.39             | 1.40            |
+| Coeff Of variation | 0.72             | 0.71            |
 
 
 *Table-8: Model Statistics of Training and Testing dataset*
